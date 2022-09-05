@@ -1,24 +1,29 @@
-import math
-inp = ""
-more = True
-def toList(t):
-    inp += str(t)
-operations = ["+","-","*","/"]
-print("For addition type \'+', for subtraction type \'-', for mulitplication type \'*', for division type \'/'")
-print("type \"done\" when done")
-while more:
-    a = input("number")
-    if type(a) == int:
-        toList(a)
-        b = input("operation")
-        if b in operations:
-            toList(b)
-        else:
-            print("invalid operation")
+e = [0]
 
+tea = ["+","-","*","/"]
 
-    else:
-        print("invalid number")
+def number():
+    ea = input("Number")
+    if type(int(ea)) is not int:
+        print("error , try again")
+        number()
+
+    ea = int(ea)
+    op = input("Operator")
+    if op not in tea:
+        print("error , try again")
+        number()
+    if op == "+":
+        e[0] += ea
+    if op == "-":
+        e[0] -= ea
+    if op == "/":
+        e[0] /= ea
+    if op == "*":
+        e[0] += ea
     
-    
 
+while True:
+    number()
+    print(e)
+    
