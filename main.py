@@ -7,9 +7,10 @@ def number():
     if type(int(ea)) is not int:
         print("error , try again")
         number()
-
-    ea = int(ea)
     op = input("Operator")
+    
+    ea = int(ea)
+    
     if op not in tea:
         print("error , try again")
         number()
@@ -20,10 +21,9 @@ def number():
     if op == "/":
         e[0] /= ea
     if op == "*":
-        e[0] += ea
+        e[0] *= ea
     
 
 while True:
+    print(e[0])
     number()
-    print(e)
-    
