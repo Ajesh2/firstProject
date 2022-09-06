@@ -1,29 +1,31 @@
-e = [0]
+e = 0
 
 tea = ["+","-","*","/"]
 
 def number():
     ea = input("Number")
-    if type(int(ea)) is not int:
+    global e
+    if type(int(ea)) is int:
+        op = input("Operator")
+        
+        ea = int(ea)
+        
+        if op not in tea:
+            print("error , try again")
+            number()
+        if op == "+":
+            e += ea
+        if op == "-":
+            e -= ea
+        if op == "/":
+            e /= ea
+        if op == "*":
+            e *= ea
+    else:
         print("error , try again")
         number()
-    op = input("Operator")
-    
-    ea = int(ea)
-    
-    if op not in tea:
-        print("error , try again")
-        number()
-    if op == "+":
-        e[0] += ea
-    if op == "-":
-        e[0] -= ea
-    if op == "/":
-        e[0] /= ea
-    if op == "*":
-        e[0] *= ea
     
 
 while True:
-    print(e[0])
+    print(e)
     number()
